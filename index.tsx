@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { createRoot } from 'react-dom/client';
+import { Analytics } from '@vercel/analytics/react';
 
 // --- DATA & LOGIC ---
 
@@ -594,7 +595,8 @@ function App() {
     };
 
     return (
-        <div className="app-container">
+        <>
+            <div className="app-container">
             <style>{`
                 :root {
                     --wa-bg-list: #FFFFFF;
@@ -961,6 +963,8 @@ function App() {
                 <ChatScreen chat={activeChat!} onBack={handleBack} />
             )}
         </div>
+        <Analytics />
+    </>
     );
 }
 
